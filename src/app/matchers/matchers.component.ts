@@ -1,0 +1,29 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-matchers',
+  templateUrl: './matchers.component.html',
+  styleUrls: ['./matchers.component.css']
+})
+export class MatchersComponent implements OnInit {
+  numero!: number;
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  multiplicar(): number{
+    if (this.numero <= 0){
+      throw new TypeError("deve ser maior que o")
+    }
+    return this.numero * this.numero
+  }
+
+  soma(n1:number, n2:number):number{
+    if(n1 <=0 || n2 <= 0){
+      throw new TypeError("deve ser maior que o")
+    }
+    return n1+n2;
+  }
+
+}
