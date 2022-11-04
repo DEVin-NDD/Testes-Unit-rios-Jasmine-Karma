@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { MatchersComponent } from './matchers/matchers.component';
+import { EstruturasComponent } from './estruturas/estruturas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MatchersComponent
+    MatchersComponent,
+    EstruturasComponent
   ],
   imports: [
     BrowserModule

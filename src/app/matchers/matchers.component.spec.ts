@@ -100,10 +100,32 @@ describe('MatchersComponent', () => {
   });
 
   it('validar o uso do toThrowError', () => {
-   expect(function () {component.soma(0,0)}).toThrowError(TypeError);
-   expect(function () {component.soma(0,0)}).toThrowError("deve ser maior que o");
+   expect(function () {component.soma(0,0)}).toThrowError(TypeError); //tipo da exceção
+   expect(function () {component.soma(0,0)}).toThrowError("deve ser maior que o"); //valor da mensagem contida 
    expect(function () {component.soma(0,0)}).toThrowError(/maior que/);
   });
+
+  it('validar o value quando o metodo transform foi chamado',() => {
+    expect(component.transform('0')).toBe('0');
+  });
+
+  it('validar o value quando o metodo transformNull foi chamado',() => {
+    expect(component.transformNull(null)).toBeNull();
+  });
+
+  it('validar se todas as frutas estão contida no array', () => {
+    expect(component.fruits()).toContain("jaboticaba");
+    expect(component.fruits()).toContain("maçã");
+    expect(component.fruits()).toContain("pera");
+    expect(component.fruits()).toContain("melância");
+    expect(component.fruits()).toContain("carambola");
+  });
+
+  it('validar se 20 é maior que 19', () => {
+    expect(component.shouldBeGreater()).toBeGreaterThan(19);
+  });
+
+
 
 
 

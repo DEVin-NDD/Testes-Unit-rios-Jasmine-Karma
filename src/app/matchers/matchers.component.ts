@@ -26,4 +26,28 @@ export class MatchersComponent implements OnInit {
     return n1+n2;
   }
 
+  transform(value:string): string{
+    if(!value){
+      return '-';
+    }
+    return value;
+  }
+
+  transformNull(value:null): null{
+    if(!value){
+      return null;
+    }
+    return value;
+  }
+
+  fruits(): string[]{
+    return ["maçã", "pera", "jaboticaba", "melância", "carambola"];
+  }
+
+  shouldBeGreater(): number{
+    return 20;
+  }
+
+  
+
 }
